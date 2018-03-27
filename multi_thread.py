@@ -9,13 +9,15 @@ def info(title):
     print('process id:', os.getpid())
 
 def func(name):
-    info('function f')
     print("name:" +name)
+    info('function f')
 
 if __name__ == '__main__':
     info('main line')
     t = Thread(target=func, args=('bob',))
-    t = Thread(target=func, args=('allice',))
+    t2 = Thread(target=func, args=('allice',))
     t.start()
+    t2.start()
+    t2.join()
     t.join()
 
