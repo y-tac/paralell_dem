@@ -11,6 +11,7 @@ def info(title):
 def func(name):
     info('function f')
     print("name:" +name)
+    time.sleep(400)
 
 if __name__ == '__main__':
     info('main line')
